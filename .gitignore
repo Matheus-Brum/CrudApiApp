@@ -1,0 +1,5 @@
+venv/
+app.cpython-36
+candidate.cpython-36
+candidate_api.cpython-36
+candidateDAO.cpython-36

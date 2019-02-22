@@ -1,0 +1,61 @@
+{% extends "app_layout.html" %}
+{% block app_content %}
+<script type="text/javascript" src="/static/js/update_candidate"></script>
+<div>
+    <h2>Update a Candidate</h2>
+    <form id="update_form" action="/api/candidates/{{candidate.id}}" method="POST" onsubmit="return checkForm();">
+
+        <div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label class="text-right" for="ucandidate_id">Id :</label>
+					<input class="form-control" type="text" id="ucandidate_id" name="id" value="{{candidate.id}}" maxlength="10" disabled>
+					<input type="hidden" name="id" value="{{candidate.id}}">
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label for="ucandidate_name">Name :</label>
+					<input class="form-control" type="text" id="ucandidate_name" name="name" value="{{candidate.name}}" maxlength="40">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label for="ucandidate_phone_no">Phone Number :</label>
+					<input class="form-control" type="text" id="ucandidate_phone_no" name="phone_no" value="{{candidate.phone_no}}" maxlength="10">
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label for="ucandidate_email">Email :</label>
+					<input class="form-control" type="text" id="ucandidate_email" name="email" value="{{candidate.email}}" max="40">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+				<div class="form-group col">
+					<label for="ucandidate_salary">Salary :</label>
+					<input class="form-control" type="text" id="ucandidate_salary" name="salary" value="{{candidate.salary}}">
+				</div>
+				<div class="form-group col">
+					<label for="ucandidate_position">Position :</label>
+					<input class="form-control" type="text" id="ucandidate_position" name="position" value="{{candidate.position}}" maxlength="25">
+				</div>
+		</div>
+				<div class="form-group">
+					<label for="ucandidate_comment">Comment :</label><br>
+					<textarea class="form-control" type="text" id="ucandidate_comment" name="comment" rows="4" cols="50">{{candidate.comment}}</textarea>
+				</div>
+		<div class="row">
+			<div class="col">
+				<button class="btn" type="reset">Reset</button>
+			</div>
+			<div class="col">
+				<button class="btn" type="submit" id="update_button">Update</button>
+			</div>
+		</div>
+    </form>
+</div>
+{% endblock %}

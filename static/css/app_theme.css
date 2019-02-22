@@ -1,0 +1,87 @@
+
+#header-container, #main-container, #page-container, body{
+    background-color: #26004d;
+    color: white;
+}
+
+.header-container{
+    background-color: #400080;
+}
+
+h2{
+    -webkit-animation: fadein 2s;
+    animation: fadein 2s;
+}
+
+@keyframes fadein{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@-webkit-keyframes fadein{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.navbar-toggler{
+    border-color: #2E4756;
+    background-color: #2E4756;
+    color: white;
+}
+
+input[type=text], input[type=password]{
+    background-color: #A9B3CE;
+    color: #2A2E45;
+    border-color: #26004d;
+    border-width: medium;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus{
+    border-color: #DBC2CF !important;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=text]:hover, input[type=password]:hover, textarea:hover, textarea:focus{
+    background-color:#B8ADC1 !important;
+}
+
+input[type=text]:-webkit-autofill, input[type=password]:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 1000px #B8ADC1 inset;
+}
+
+textarea{
+    background-color: #A9B3CE !important;
+    border-color: #26004d !important;
+    color: #2A2E45 !important;
+    border-width: medium !important;
+    resize: none;
+}
+
+button[type=submit], button[type=reset], button[type=button]{
+    -webkit-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+    background-color: #DBC2CF;
+}
+
+button[type=submit]:hover, button[type=reset]:hover, button[type=button]:hover{
+    background-color: #bf4080;
+    color: white;
+}
+
+.navbar-nav > a{
+    color : white;
+}
+
+.navbar-nav > a:hover{
+    background-color: #26004d;
+}
+
+th{
+    background-color: #092c66;
+}
+
+@media only screen and (min-width: 767px){
+    button[type=submit], button[type=reset], #find_button{
+        width: 250px;
+    }
+}
+

@@ -1,0 +1,70 @@
+
+function clearFields(){
+    let fieldIds = ["candidate_id", "candidate_name", "candidate_phone_no", "candidate_email", "candidate_salary",
+    "candidate_position", "candidate_comment"];
+    for(var i = 0; i < fieldIds.length; i++){
+        document.getElementById(fieldIds[i]).style.borderColor = '#26004d';
+    }
+}
+
+function checkField(inputId){
+    let field = document.getElementById(inputId);
+    let fieldValue = field.value;
+    if(fieldValue == "" || fieldValue == null){
+        field.style.borderColor = '#800028';
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
+function checkEmail(inputId){
+    var emailField = document.getElementById(inputId);
+    var email = emailField.value;
+    if(checkField(inputId) == true){
+        if(email.includes("@") == true && email.length >= 3
+            && email.charAt(0) != '@' && email.charAt(email.length -1) != '@'){
+           return true;
+        }else{
+            emailField.style.borderColor = '#800028';
+            return false;
+        }
+    }else{
+        emailField.style.borderColor = '#800028';
+        return false;
+    }
+}
+
+function isNumber(inputId){
+    var field = document.getElementById(inputId);
+    var fieldValue = parseInt(field.value);
+    if(isNaN(fieldValue) == false && Number.isInteger(fieldValue) == true){
+        return true;
+    }else{
+        field.style.borderColor = '#800028';
+        return false;
+    }
+}
+
+function checkForm(){
+    clearFields();
+    let value1 = checkField("candidate_id") && isNumber("candidate_id");
+    let value2 = checkField("candidate_name");
+    let value3 = checkField("candidate_phone_no") && isNumber("candidate_phone_no");
+    let value4 = checkField("candidate_email");
+    let value5 = checkField("candidate_salary") && isNumber("candidate_salary");
+    let value6 = checkField("candidate_position");
+    let value7 = checkField("candidate_comment");
+
+    /*
+    // FORM DEBUG
+    let fieldIds = [value1, value2, value3, value4, value5, value6, value7];
+
+    for(var i = 0; i < fieldIds.length; i++){
+        alert('bool' + (i+1) + '=' + fieldIds[i])
+    }
+    */
+    return value1 && value2 && value3 && value4 && value5 && value6 && value7;
+}
+

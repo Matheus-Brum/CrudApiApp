@@ -1,0 +1,57 @@
+{% extends "app_layout.html" %}
+{% block app_content %}
+
+<script type="text/javascript">
+	// function fetchs json and create a row in the table
+	$(document).ready(function(){
+		$("#find_button").click(function(){
+			$.getJSON("/api/candidates/" + document.getElementById("find").value, function(result){
+				var async_table = "";
+				$.each(result, function(i, field){
+						async_table = "<tr><td>" + result['id'] + "</td>" + "<td>" +
+						result['name'] + "</td>" + "<td>" + result['email'] + "</td>" +
+						"<td>" + result['phone_no'] + "</td>" + "<td><a href='/candidates/" + result['id'] + "'>Details</a></td></tr>";
+				});
+				$("#async_body").html(async_table);
+			});
+		});
+	});
+</script>
+
+
+<h2>Find a Candidate</h2>
+    <div class="form-container">
+
+			<div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="find" id="find" placeholder="Enter a Candidate Id">
+				</div>
+			</div>
+
+            <button type="button" id="find_button" class="btn">Find</button>&nbsp;
+            <button type="reset" class="btn">Reset</button>
+    </div>
+
+	<hr>
+
+	<div id="data">
+		<div class="table-container">
+            <table class="table">
+
+				<thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+						<th scope="col">Details</th>
+                    </tr>
+                </thead>
+
+                <tbody id="async_body">
+
+                </tbody>
+            </table>
+        </div>
+	</div>
+{% endblock %}

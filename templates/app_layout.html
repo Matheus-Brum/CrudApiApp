@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- APP THEME -->
+    <link rel="stylesheet" type="text/css" href="/static/css/app_theme.css">
+    <!-- APP FAVICON -->
+    <link rel="icon" type="image/png" href="/static/img/favicon.png">
+    <title>Code Challenge</title>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header-container container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="/">Home</a>
+                        <a class="nav-item nav-link active" href="/add_candidate">Add a Candidate</a>
+                        <a class="nav-item nav-link active" href="/find_candidate">Find a Candidate</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container text-center">
+        {% block app_content %}
+        {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
